@@ -1,23 +1,25 @@
-package com.emazon.categoria.infrastructure.repository;
+package com.emazon.categoria.infrastructure.persistence.repository;
 
 import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
 
-import com.emazon.categoria.application.mapper.CategoryMapper;
+import com.emazon.categoria.infrastructure.mapper.CategoryMapper;
 import com.emazon.categoria.domain.model.Category;
 import com.emazon.categoria.domain.repository.ICategoryRepository;
-import com.emazon.categoria.infrastructure.entities.CategoryEntity;
+import com.emazon.categoria.infrastructure.persistence.entities.CategoryEntity;
 
-import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
 @Repository
 public class JpaCategoryRepositoryImple implements ICategoryRepository{
 
     private final JpaCategoryRepository jpaCategoryRepository;
     private final CategoryMapper categoryMapper;
 
+    public JpaCategoryRepositoryImple(JpaCategoryRepository jpaCategoryRepository, CategoryMapper categoryMapper) {
+        this.jpaCategoryRepository = jpaCategoryRepository;
+        this.categoryMapper = categoryMapper;
+    }
 
     @Override
     public Optional<Category> findById(Long id) {

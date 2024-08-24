@@ -1,10 +1,10 @@
-package com.emazon.categoria.infrastructure.configuration;
+package com.emazon.categoria.configuration;
 
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.emazon.categoria.application.mapper.CategoryMapper;
+import com.emazon.categoria.infrastructure.mapper.CategoryMapper;
 import com.emazon.categoria.domain.repository.ICategoryRepository;
 import com.emazon.categoria.domain.service.CreateCategoryService;
 import com.emazon.categoria.domain.usecases.ICreateCategoryUseCase;

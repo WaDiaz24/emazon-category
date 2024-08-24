@@ -39,7 +39,7 @@ public class Category {
 
 
     public void validateName(String name) {
-        if (name == null ) {
+        if (name == null || name.isBlank()) {
             throw new CategoryInvalidException("El nombre no puede estar vacío");
             
         }

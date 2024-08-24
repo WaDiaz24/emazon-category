@@ -1,6 +1,6 @@
-package com.emazon.categoria.infrastructure.repository;
+package com.emazon.categoria.infrastructure.persistence.repository;
 
-import com.emazon.categoria.infrastructure.entities.CategoryEntity;
+import com.emazon.categoria.infrastructure.persistence.entities.CategoryEntity;
 
 import java.util.Optional;
 

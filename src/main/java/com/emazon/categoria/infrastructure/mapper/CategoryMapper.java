@@ -1,11 +1,9 @@
-package com.emazon.categoria.application.mapper;
+package com.emazon.categoria.infrastructure.mapper;
 
-import com.emazon.categoria.application.dto.CategoryDTO;
+import com.emazon.categoria.infrastructure.dto.CategoryDTO;
 import com.emazon.categoria.domain.model.Category;
-import com.emazon.categoria.infrastructure.entities.CategoryEntity;
+import com.emazon.categoria.infrastructure.persistence.entities.CategoryEntity;
 import org.mapstruct.Mapper;
-import org.mapstruct.factory.Mappers;
-import org.springframework.stereotype.Component;
 
 @Mapper(componentModel = "spring")
 public interface CategoryMapper {

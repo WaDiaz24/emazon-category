@@ -1,4 +1,4 @@
-package com.emazon.categoria.infrastructure.entities;
+package com.emazon.categoria.infrastructure.persistence.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;

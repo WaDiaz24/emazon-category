@@ -1,15 +1,14 @@
 package com.emazon.categoria.infrastructure.service;
 
-import com.emazon.categoria.application.dto.CategoryDTO;
-import com.emazon.categoria.application.mapper.CategoryMapper;
+import com.emazon.categoria.infrastructure.dto.CategoryDTO;
+import com.emazon.categoria.infrastructure.mapper.CategoryMapper;
 import com.emazon.categoria.domain.model.Category;
 import com.emazon.categoria.domain.usecases.ICreateCategoryUseCase;
-import com.emazon.categoria.infrastructure.entities.CategoryEntity;
-import com.emazon.categoria.infrastructure.repository.JpaCategoryRepository;
-import lombok.RequiredArgsConstructor;
+import com.emazon.categoria.infrastructure.persistence.entities.CategoryEntity;
+import com.emazon.categoria.infrastructure.persistence.repository.JpaCategoryRepository;
 import org.springframework.stereotype.Service;
 
-@RequiredArgsConstructor
+
 @Service
 public class CreatedCategoryService{
 
@@ -17,7 +16,12 @@ public class CreatedCategoryService{
     private final CategoryMapper categoryMapper;
     private final ICreateCategoryUseCase cleanCreateCategoryUseCase;
 
-  
+    public CreatedCategoryService(JpaCategoryRepository jpaCategoryRepository, CategoryMapper categoryMapper, ICreateCategoryUseCase cleanCreateCategoryUseCase) {
+        this.jpaCategoryRepository = jpaCategoryRepository;
+        this.categoryMapper = categoryMapper;
+        this.cleanCreateCategoryUseCase = cleanCreateCategoryUseCase;
+    }
+
     public CategoryDTO createCategory(CategoryDTO categoryDTO) {
 
         CategoryDTO cleanCategoryDTO = cleanCreateCategoryUseCase.createCategory(categoryDTO);
